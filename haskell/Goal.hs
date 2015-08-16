@@ -22,8 +22,8 @@ eq x y = stream . (unify x y)
 with :: [String] -> ([Term a] -> Goal a) -> Goal a
 with names factory state = goal newState
   where
-    (newState, vars) = mbind names state
-    goal = factory vars
+    (newState, ids) = mbind names state
+    goal = factory $ map Var ids
 
 either :: Goal a -> Goal a -> Goal a
 either x y state = _interleave (x state) (y state)
