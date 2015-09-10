@@ -9,7 +9,7 @@ data State a  = State (Values a)
 type Values a = [(Identifier, Term a)]
 
 instance (Show a) => Show (State a) where
-  show (State values) = "[" ++ (intercalate ", " (map format values)) ++ "]"
+  show (State values) = "[" ++ (intercalate ", " $ map format values) ++ "]"
     where
       format (id, term) = (show id) ++ " -> " ++ (show term)
 

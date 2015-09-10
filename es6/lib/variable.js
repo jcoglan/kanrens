@@ -6,7 +6,8 @@ export default class Variable {
   inspect() {
     return this._name;
   }
-}
 
-Variable.named = (...names) =>
-  names.map(name => new Variable(name))
+  static named(...names) {
+    return names.map(name => new Variable(name))
+  }
+}
