@@ -1,2 +1,3 @@
 haskell/main
 node_modules
+*.hi
