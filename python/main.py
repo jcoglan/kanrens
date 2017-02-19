@@ -1,3 +1,4 @@
+from __future__ import print_function
 import copy
 from collections import OrderedDict
 
@@ -128,7 +129,7 @@ def with_vars(vars):
     return either(eq(x, 5), eq(x, 6))
 
 goal = bind(['x', 'y'], with_vars)
-print goal(world)
+print(goal(world))
 
 
 def with_vars(vars):
@@ -136,12 +137,12 @@ def with_vars(vars):
     return both(eq(x, 'wigwam'), eq(y, 'wotsit'))
 
 goal = bind(['x', 'y'], with_vars)
-print goal(world)
+print(goal(world))
 
 
 
-print from_list([1,2,3,4])
-print to_list(from_list([1,2,3,4]))
+print(from_list([1,2,3,4]))
+print(to_list(from_list([1,2,3,4])))
 
 
 def append(x, y, z):
@@ -174,9 +175,9 @@ goal = bind(['x', 'y', 'z'], with_vars)
 states = goal(world)
 
 for state in states:
-    print ''
-    print ('x', to_list(state.result(0)))
-    print ('y', to_list(state.result(1)))
+    print('')
+    print(('x', to_list(state.result(0))))
+    print(('y', to_list(state.result(1))))
 
 
 
